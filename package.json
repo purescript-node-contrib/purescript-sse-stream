@@ -1,0 +1,29 @@
+{
+  "name": "purescript-sse-stream",
+  "version": "1.0.0",
+  "description": "Stream for writing Server-Sent Events",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purescript-node-contrib/purescript-sse-stream.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/purescript-node-contrib/purescript-sse-stream/issues"
+  },
+  "homepage": "https://github.com/purescript-node-contrib/purescript-sse-stream#readme",
+  "dependencies": {
+    "ssestream": "^1.1.0"
+  },
+  "devDependencies": {
+    "stream-buffers": "^3.0.2"
+  }
+}
