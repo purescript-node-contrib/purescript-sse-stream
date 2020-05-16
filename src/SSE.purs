@@ -15,7 +15,7 @@ import Effect (Effect)
 import Foreign.Object (Object)
 import Foreign.Object as Object
 import Network.HTTP.Types as H
-import Node.HTTP.Client as HTTP
+import Node.HTTP as HTTP
 import Node.Stream (Writable)
 import SSE.Types (ServerEvent(..), EventName(..), SseStream)
 
