@@ -17,7 +17,7 @@ import Foreign.Object as Object
 import Network.HTTP.Types as H
 import Node.HTTP.Client as HTTP
 import Node.Stream (Writable)
-import SSE.Types (ServerEvent(..), SseStream)
+import SSE.Types (ServerEvent(..), EventName(..), SseStream)
 
 writeHead :: SseStream -> H.Status -> Array H.Header -> Effect Unit
 writeHead sse {code, message} hdrs = _writeHead sse code headers
@@ -29,8 +29,8 @@ write sse (Comment comment) =  _write sse { comment }
 write sse (RetryEvent retry) =  _write sse { retry } 
 write sse (ServerEvent {data: d, event: e, id: i}) = case d,e,i of  
   _data,Nothing,Nothing    -> _write sse { data: _data } 
-  _data,Just event,Just id -> _write sse { data: _data, event, id } 
-  _data,Just event,Nothing -> _write sse { data: _data, event } 
+  _data,Just (EventName event),Just id -> _write sse { data: _data, event, id } 
+  _data,Just (EventName event),Nothing -> _write sse { data: _data, event } 
   _data,Nothing,Just id    -> _write sse { data: _data, id }
 
 -- TO CONSIDER: since the SseStream object extends Transform class 
